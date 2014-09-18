@@ -723,7 +723,12 @@ input[type="submit"], .inline-button {
 
 .risk {
   left: 0;
-  width: 48.5%; }
+  width: 48.5%;
+  -webkit-transition-duration: .25s;
+  -moz-transition-duration: .25s;
+  -ms-transition-duration: .25s;
+  -o-transition-duration: .25s;
+  transition-duration: .25s; }
   .risk section {
     border-bottom: 1px solid white;
     padding: 0 6em; }
@@ -793,13 +798,20 @@ input[type="submit"], .inline-button {
 
 .scrollnav {
   width: 3%;
-  left: 48.5%; }
+  left: 48.5%;
+  -webkit-transition-duration: .25s;
+  -moz-transition-duration: .25s;
+  -ms-transition-duration: .25s;
+  -o-transition-duration: .25s;
+  transition-duration: .25s; }
 
 .risk.open {
-  width: 70%; }
+  width: 70%;
+  left: 0; }
 
 .risk.closed {
-  width: 27%; }
+  width: 70%;
+  left: -43%; }
 
 .scrollnav.left {
   left: 27%; }
@@ -814,14 +826,21 @@ input[type="submit"], .inline-button {
   width: 27%; }
 
 #fixed-messages.open {
-  width: 70%; }
+  width: 70%;
+  left: 0; }
 
 #fixed-messages.closed {
-  width: 27%; }
+  width: 70%;
+  left: -43%; }
 
 .education {
   right: 0;
-  width: 48.5%; }
+  width: 48.5%;
+  -webkit-transition-duration: .25s;
+  -moz-transition-duration: .25s;
+  -ms-transition-duration: .25s;
+  -o-transition-duration: .25s;
+  transition-duration: .25s; }
 
 .photo-bg {
   padding: 0;

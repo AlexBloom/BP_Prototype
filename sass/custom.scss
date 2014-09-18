@@ -361,6 +361,7 @@ font-weight: 700;
 	input{
 		margin:1em .5em;
 	}
+	@include quarter-second-transition;
 }
 
 //Assess
@@ -442,13 +443,16 @@ font-weight: 700;
 .scrollnav{
 	width:3%;
 	left:48.5%;
+	@include quarter-second-transition;
 }
 
 .risk.open{
 	width:70%;
+	left:0;
 }
 .risk.closed{
-	width:27%;
+	width:70%;
+	left:-43%;
 }
 .scrollnav.left{
 		left:27%;
@@ -464,9 +468,11 @@ font-weight: 700;
 }
 #fixed-messages.open{
 	width:70%;
+	left:0;
 }
 #fixed-messages.closed{
-	width:27%;
+	width:70%;
+	left:-43%;
 }
 
 
@@ -474,6 +480,7 @@ font-weight: 700;
 .education{
 	right:0;
 	width:48.5%;
+	@include quarter-second-transition;
 }
 .photo-bg{
 	padding: 0;	
