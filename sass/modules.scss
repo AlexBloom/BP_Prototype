@@ -1,0 +1,263 @@
+// MODULES
+
+
+
+.bargraph{
+	position:relative;
+	width:90%;
+	margin:0 auto;
+	background-color:$light-grey;
+	height:2em;
+	
+	@include one-em-border-radius;
+	
+	.bar-one,.bar-two,.bar-three{
+		//position:absolute;
+		float:left;
+		height:2em;
+		//top:0;
+		//bottom:0;
+		//left:0;
+		border-right:1px solid $white;
+	}
+	
+	.bar-one{
+		width:25%;
+		z-index:3;
+		background-color:$pink;
+		
+		//-webkit-border-radius: 1em;
+		//-moz-border-radius: 1em;
+		//-ms-border-radius: 1em;
+		//-o-border-radius: 1em;
+		border-radius:1em 0 0 1em;
+		
+	}
+	.bar-two{
+		width:5%;
+		z-index:2;
+		background-color:$red;
+	}
+	.bar-three{
+		width:5%;
+		z-index:1;
+		background-color:$nude;
+	}
+}
+
+
+//Scrollable containers
+
+.scrollpane{
+	position:absolute;
+	top:0;
+	bottom:0;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	margin-top:6em;
+	
+}
+
+/* ======================================================== SCROLLING VERTICAL DOT NAVIGATION  */
+.scrollnav {
+
+	position:fixed;
+	//left:0;
+	top:0;
+	bottom:0;
+	z-index:0;
+	margin-top:5em;
+	background-color:$black;
+
+	ul {
+    position:relative;
+    display:inline-block;
+	width:100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+	
+	}
+
+	li {
+    position: relative;
+    display: block;
+    margin:1.5em auto;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+	//box-shadow:0 0 0 2px rgba(0,0,0,.25);
+	background-color:$white;
+	border-radius:50%;
+
+	.current{
+		//box-shadow: inset 0 0 0 .75em $white;
+	}
+		a {
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    outline: none;
+	    border-radius: 50%;
+	    background-color: #fff;
+	    background-color: rgba(255,255,255,0.3);
+	    text-indent: -999em;
+	    cursor: pointer; /* make the text accessible to screen readers */
+	    position: absolute;
+		background-color: transparent;
+		box-shadow: inset 0 0 0 2px $white;
+		-webkit-transition: box-shadow 0.3s ease;
+		transition: box-shadow 0.3s ease;
+
+			&:active{
+			box-shadow: inset 0 0 0 .75em $white;
+			}
+
+		}
+
+	}
+
+
+}
+
+
+//Full Screen / Vertical Centering
+
+.full-screen-container{
+    display: -webkit-flex;
+    display: flex;
+	width:100%;
+	min-height:(em(800));
+	margin:3em 0 0 0;
+}
+
+.full-screen-content{
+	margin: auto;
+	max-width:(em(800));
+	padding:1em;
+	//min-height:(em(800));
+}
+
+.vertical-container {
+  display: -webkit-flex;
+  display: flex;
+  height: 300px;
+}
+.vertically-centered {
+  margin: auto;
+}
+
+h1, h2, h3{
+	font-family: 'itc_avant_garde_pro_mdbold', helvetica-neue, helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	color:$pink;
+}
+
+button.action{
+	background-color:$pink;
+	display:block;
+	margin:2em auto;
+	padding:1em 1.5em;
+	color:$white;
+	border:none;
+	//text-transform:uppercase;
+	letter-spacing:.1em;
+	@include half-em-border-radius;
+	@include quarter-second-transition;
+	&:hover{
+		background-color:$red;
+	}
+}
+
+
+// Articles, Text Content
+
+article{
+	width:100%;
+	float:left;
+	//max-width:(em(900));
+	header{
+		width:100%;
+		padding:1em;
+	}
+	section{
+		padding:1em;
+		max-width:(em(800));
+		margin:0 auto;
+	}
+	@media screen and (min-width:(em(800))){
+		
+	}
+}
+
+
+
+// Swipe Classes
+
+.swipe {
+  overflow:hidden;
+  visibility:hidden;
+  position:relative;
+}
+.swipe-wrap {
+  overflow:hidden;
+  position:relative;
+}
+.swipe-wrap > div {
+  position:relative;
+  float:left;
+  width:100%;
+}
+
+.nontouchnav{
+	position: absolute;
+	bottom: 0;
+	top:0;
+	padding: .25em 0;
+	width: 100%;
+	z-index: 1000;
+	text-align: center;
+	font-size: 1.5em;
+	overflow: hidden;
+	
+	@media screen and (min-width:(em(1000))){
+		display:block;
+	}
+	
+	div{
+		position:absolute;
+		color:$medium-grey;
+		width: 1.5em;
+		cursor:pointer;
+		text-align:center;
+		top:0;
+		bottom:0;
+		padding-top:27%;
+		
+		background-color: rgba(255,255,255,0);
+		opacity:0;
+		@include quarter-second-transition;
+		
+		&:hover{
+			background-color: rgba(255,255,255,0.75);
+			opacity:0.5;
+			color:$black;
+			@include quarter-second-transition;
+		}
+	}
+
+	.prev{		
+		left:0;
+	}
+	
+	.next{
+		right:0;
+		//border-left:1px dotted $medium-grey;
+	}
+
+}
+
+
