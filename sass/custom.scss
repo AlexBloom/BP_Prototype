@@ -61,7 +61,7 @@ label {
 		display: -webkit-flex;
 		display: flex;
 		border-bottom:1px solid $grey;
-		padding:.5em 0;
+		padding:.75em 0;
 		margin:0;
 		li{
 			text-align:center;
@@ -73,7 +73,7 @@ label {
 		}
 		img{
 			width:8em;
-			margin:1em auto 0;
+			margin:.25em auto 0;
 		}
 		p{
 			margin:.25em 0;
@@ -157,12 +157,12 @@ label {
 		padding:1em;
 		cursor:pointer;
 		text-decoration:none;
-	}
+}
 #search-btn{
 		position:absolute;
 		right:0;
 		top:0;
-	}
+}
 	
 	
 	#search-wrap{
@@ -295,12 +295,17 @@ section{
 	bottom:0;
 	right:0;
 	color:$pink;
+	a{
+		color:$black;
+		&:hover{
+			color:$white;
+		}
+	}
 	span{
 		display:block;
 		float:left;
 		padding:.5em;
 	}
-	
 	
 }
 
@@ -341,37 +346,142 @@ font-weight: 700;
 //PAGE BY PAGE
 
 //HOME
-
+#home-content{
+	background-color:$pink;
+	color:$white;
+}
 //Risk Base
 .risk{
 	left:0;
 	width:48.5%;
+	section{
+		border-bottom:1px solid $white;
+		padding:0 6em;
+	}
+	input{
+		margin:1em .5em;
+	}
 }
+
+//Assess
+.assess{
+	
+	background-color:$pink;
+	color:$white;
+	
+}
+#drink-slider{
+	position:relative;
+	.slidebar{
+		display:block;
+		width:80%;
+		margin:2em auto 0!important;
+		opacity:0;
+	}
+	.drinkicon{
+		position:absolute;
+		left:6%;
+		top:2.5em;
+		width:3em;
+	}
+	.numbers{
+		width:88%;
+		margin:0 auto 4em;
+		border-bottom:2px solid $black;
+		padding:0 0 1em 0;
+		list-style-type:none;
+		li{
+			float:left;
+			text-align:center;
+			width:9%;
+		}
+	}
+}
+
+.prompt{
+	text-align:center;
+	font-size:1.5em;
+}
+
+#fixed-messages{	
+	p{
+		text-align:center;
+		margin:.5em 0;
+		font-style:italic;
+		color:$medium-grey;
+	}	
+	.action{
+		background-color:$white;
+		margin:1em auto;
+		border:2px solid $pink;
+		color:$pink;
+		font-weight:bold;
+		padding:.5em 1em;
+		&:hover{
+			background-color:$pink;	
+			color:$white;
+		}
+	}
+	position:fixed;
+	//width:48.5%;
+	bottom:0;
+	z-index:1000;
+	background-color:$white;
+	//max-height:0;
+	opacity:0;
+	@include quarter-second-transition;
+}
+
+#fixed-messages.visible{
+	//max-height:auto!important;
+	opacity:1!important;
+}
+
+//Screen Split
 
 .scrollnav{
 	width:3%;
 	left:48.5%;
 }
 
-.education{
-	width:48.5%;
-	right:0;
+.risk.open{
+	width:70%;
+}
+.risk.closed{
+	width:27%;
+}
+.scrollnav.left{
+		left:27%;
+}
+.scrollnav.right{
+		left:70%;
+}
+.education.open{
+		width:70%;
+}
+.education.closed{
+		width:27%;
+}
+#fixed-messages.open{
+	width:70%;
+}
+#fixed-messages.closed{
+	width:27%;
 }
 
-//Education
 
+//Education
+.education{
+	right:0;
+	width:48.5%;
+}
 .photo-bg{
-	padding:1px 0;
+	padding: 0;	
 	h1{
 		color:$white;
-		padding:5em 0;
+		padding:1.5em .5em;
 		margin:0;
 	}
-	//img{
-//		position:absolute;
-//		width:100%;
-//		top:0;
-//	}
 	@include full-bleed-background;
 }
 
@@ -380,7 +490,7 @@ font-weight: 700;
 		background-color:$pink-translucent;
 	}
 	.photo-bg{
-	background:url('../img/education/lifestyle.jpg');
+	background-image:url('../img/education/lifestyle.jpg');
 	}
 }
 
@@ -389,7 +499,7 @@ font-weight: 700;
 		background-color:$red-translucent;
 	}
 	.photo-bg{
-	background:url('../img/education/familyhistory.jpg');
+	background-image:url('../img/education/familyhistory.jpg');
 	}
 }
 
@@ -398,7 +508,7 @@ font-weight: 700;
 		background-color:$nude-translucent;
 	}
 	.photo-bg{
-	background:url('../img/education/knowyournormal.jpg');
+	background-image:url('../img/education/knowyournormal.jpg');
 	}
 }
 

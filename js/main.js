@@ -6,10 +6,51 @@ $(document).ready(function () {
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
 		$('.full-screen-container').css('min-height',$(window).height());
+		$('.risk section').css('min-height',$(window).height()-150);
+		
 
 		$(window).resize(function() {
 			$('.full-screen-container').css('min-height',$(window).height());
+			$('.risk section').css('min-height',$(window).height()-150);
 		});
+
+
+		//Sides Toggle
+		
+		$('.risk').click(function(){
+			$(this).addClass('open');
+			$(this).removeClass('closed');
+			$('.scrollnav').addClass('right');
+			$('.scrollnav').removeClass('left');
+			$('.education').addClass('closed');
+			$('#fixed-messages').addClass('open');
+			$('#fixed-messages').removeClass('closed');
+		});
+		
+		$('.education').click(function(){
+			$(this).addClass('open');
+			$(this).removeClass('closed');
+			$('.scrollnav').addClass('left');
+			$('.scrollnav').removeClass('right');
+			$('.risk').addClass('closed');
+			$('#fixed-messages').addClass('closed');
+			$('#fixed-messages').removeClass('open');
+		});
+		
+		$('#open-education').click(function(){
+			$('.education').addClass('open');
+			$('.education').removeClass('closed');
+			$('.scrollnav').addClass('left');
+			$('.scrollnav').removeClass('right');
+			$('.risk').addClass('closed');
+			$('#fixed-messages').addClass('closed');
+			$('#fixed-messages').removeClass('open');
+		});
+		
+		$('#launch-assess').click(function(){
+			$('#fixed-messages').addClass('visible');
+		});
+
 
 	//Menu Toggle
 	$('#site-header').addClass('closed');
@@ -34,6 +75,16 @@ $(document).ready(function () {
 		$('#toggle').removeClass('close');
 		$('body').removeClass('overflow-hidden')
   	 });
+
+
+
+
+
+
+	 
+
+
+
 
 
  });
