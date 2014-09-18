@@ -353,7 +353,7 @@ h1 {
   font-size: 4em; }
 
 button.action {
-  background-color: #d7006d;
+  background-color: transparent;
   color: white;
   border: 2px solid white;
   display: block;
@@ -373,11 +373,10 @@ button.action {
   -o-transition-duration: .25s;
   transition-duration: .25s; }
   button.action:hover {
-    background-color: white;
-    color: #d7006d; }
+    background-color: white; }
 
 input.action {
-  background-color: #d7006d;
+  background-color: transparent;
   color: white;
   border: 2px solid white;
   box-sizing: content-box;
@@ -387,8 +386,26 @@ input.action {
   text-align: center;
   float: left; }
   input.action:hover {
-    background-color: white;
-    color: #d7006d; }
+    background-color: white; }
+
+.assess button:hover, .assess input:hover {
+  color: #d7006d; }
+
+.family-history {
+  color: white; }
+  .family-history .padded {
+    padding: 0 4em; }
+  .family-history button:hover, .family-history input:hover {
+    color: #f63200; }
+
+button.lifestyle:hover, input.lifestyle:hover {
+  color: #d7006d; }
+
+button.family-history:hover, input.family-history:hover {
+  color: #f63200; }
+
+button.knowyournormal:hover, input.knowyournormal:hover {
+  color: #ffb4aa; }
 
 a {
   text-decoration: none; }
@@ -796,6 +813,21 @@ input[type="submit"], .inline-button {
 #fixed-messages.visible {
   opacity: 1 !important; }
 
+#assess-return {
+  opacity: 0;
+  max-height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #555559; }
+
+#assess-return.overlay {
+  opacity: 1;
+  max-height: auto; }
+
 .scrollnav {
   width: 3%;
   left: 48.5%;
@@ -849,21 +881,24 @@ input[type="submit"], .inline-button {
   background-repeat: no-repeat; }
   .photo-bg h1 {
     color: white;
-    padding: 1.5em .5em;
+    padding: 0 .5em;
     margin: 0; }
 
-.lifestyle h1 {
-  background-color: rgba(215, 0, 109, 0.75); }
 .lifestyle .photo-bg {
   background-image: url("../img/education/lifestyle.jpg"); }
 
-.family-history h1 {
-  background-color: rgba(246, 50, 0, 0.75); }
 .family-history .photo-bg {
   background-image: url("../img/education/familyhistory.jpg"); }
 
-.know-your-normal h1 {
+.pink-bg {
+  background-color: rgba(215, 0, 109, 0.75); }
+
+.red-bg {
+  background-color: rgba(246, 50, 0, 0.75); }
+
+.nude-bg {
   background-color: rgba(255, 180, 170, 0.75); }
+
 .know-your-normal .photo-bg {
   background-image: url("../img/education/knowyournormal.jpg"); }
 

@@ -437,7 +437,21 @@ font-weight: 700;
 	//max-height:auto!important;
 	opacity:1!important;
 }
-
+#assess-return{
+	opacity:0;
+	max-height:0;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background-color:rgba(255,255,255,.85);
+	color:$grey;
+}
+#assess-return.overlay{
+	opacity:1;
+	max-height:auto;
+}
 //Screen Split
 
 .scrollnav{
@@ -486,7 +500,7 @@ font-weight: 700;
 	padding: 0;	
 	h1{
 		color:$white;
-		padding:1.5em .5em;
+		padding:0 .5em;
 		margin:0;
 	}
 	@include full-bleed-background;
@@ -494,7 +508,7 @@ font-weight: 700;
 
 .lifestyle{
 	h1{
-		background-color:$pink-translucent;
+		//background-color:$pink-translucent;
 	}
 	.photo-bg{
 	background-image:url('../img/education/lifestyle.jpg');
@@ -503,16 +517,25 @@ font-weight: 700;
 
 .family-history{
 	h1{
-		background-color:$red-translucent;
+		//background-color:$red-translucent;
 	}
 	.photo-bg{
 	background-image:url('../img/education/familyhistory.jpg');
 	}
 }
+.pink-bg{
+	background-color:$pink-translucent;
+}
+.red-bg{
+	background-color:$red-translucent;
+}
+.nude-bg{
+	background-color:$nude-translucent;
+}
 
 .know-your-normal{
 	h1{
-		background-color:$nude-translucent;
+		//background-color:$nude-translucent;
 	}
 	.photo-bg{
 	background-image:url('../img/education/knowyournormal.jpg');

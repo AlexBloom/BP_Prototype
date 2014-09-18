@@ -7,11 +7,13 @@ $(document).ready(function () {
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
 		$('.full-screen-container').css('min-height',$(window).height());
 		$('.risk section').css('min-height',$(window).height()-150);
+		$('#family-history-home .vertical-container').css('min-height',$(window).height());
 		
 
 		$(window).resize(function() {
 			$('.full-screen-container').css('min-height',$(window).height());
 			$('.risk section').css('min-height',$(window).height()-150);
+			$('#family-history-home .vertical-container').css('min-height',$(window).height());
 		});
 
 
@@ -35,6 +37,9 @@ $(document).ready(function () {
 			$('.risk').addClass('closed');
 			$('#fixed-messages').addClass('closed');
 			$('#fixed-messages').removeClass('open');
+			
+			//$('#assess-return').addClass('overlay');
+			
 		});
 		
 		$('#open-education').click(function(){
