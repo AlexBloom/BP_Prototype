@@ -352,16 +352,30 @@ h1, h2, h3 {
 h1 {
   font-size: 4em; }
 
-button.action {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
+.number-icon {
+  font-family: "itc_avant_garde_pro_mdbold", helvetica-neue, helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
   display: block;
-  margin: 2em auto;
-  padding: 1em 1.5em;
-  letter-spacing: .1em;
-  text-decoration: none !important;
-  outline: none;
+  margin: 1em auto 3em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.5em;
+  vertical-align: baseline;
+  line-height: 2em; }
+
+.action {
+  font-family: "itc_avant_garde_pro_mdbold", helvetica-neue, helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  -webkit-font-smoothing: antialiased;
+  padding: 1em 2.5em;
+  background-color: white;
+  border: 2px solid white;
   -webkit-border-radius: .5em;
   -moz-border-radius: .5em;
   -ms-border-radius: .5em;
@@ -372,45 +386,44 @@ button.action {
   -ms-transition-duration: .25s;
   -o-transition-duration: .25s;
   transition-duration: .25s; }
-  button.action:hover {
-    background-color: white; }
+  .action:hover {
+    color: white;
+    background-color: transparent; }
+
+button.action {
+  display: block;
+  margin: 4em auto 1em;
+  text-decoration: none !important;
+  outline: none; }
 
 input.action {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
   box-sizing: content-box;
   display: block;
-  margin: .5em;
-  padding: .5em 2em;
   text-align: center;
   float: left; }
-  input.action:hover {
-    background-color: white; }
 
-.assess button:hover, .assess input:hover {
+.assess button, .assess input {
   color: #d7006d; }
 
 .family-history {
   color: white; }
   .family-history .padded {
     padding: 0 4em; }
-  .family-history button:hover, .family-history input:hover {
+  .family-history button, .family-history input {
     color: #f63200; }
 
-button.lifestyle:hover, input.lifestyle:hover {
+button.lifestyle, input.lifestyle {
   color: #d7006d; }
 
-button.family-history:hover, input.family-history:hover {
+button.family-history, input.family-history {
   color: #f63200; }
 
-button.knowyournormal:hover, input.knowyournormal:hover {
+button.knowyournormal, input.knowyournormal {
   color: #ffb4aa; }
 
 a {
   text-decoration: none; }
   a button {
-    color: white;
     text-decoration: none !important; }
 
 article {
@@ -454,10 +467,12 @@ article {
 
 .sequence-overlay-content {
   padding: 0 4em;
-  margin: auto auto 1em auto;
+  margin: 1em auto auto auto;
   max-width: 800;
   z-index: 2;
   color: white; }
+  .sequence-overlay-content .action:hover {
+    color: #555559; }
 
 .swipe {
   overflow: hidden;
@@ -564,8 +579,8 @@ label {
       padding: 0 0 0 0;
       margin: 0; }
     #site-header ul.flexthree img {
-      width: 8em;
-      margin: .25em auto 0; }
+      width: 6em;
+      margin: .4em auto 0; }
     #site-header ul.flexthree p {
       margin: .25em 0; }
 
@@ -744,12 +759,6 @@ label {
     float: left;
     padding: .5em; }
 
-input {
-  margin: 1em 0;
-  outline: none;
-  padding: 1em 0;
-  font-size: 1em; }
-
 input[type="text"] {
   width: 60%;
   background: none;
@@ -761,17 +770,16 @@ input[type="text"] {
   transition: border-color 0.2s; }
 
 input[type="submit"], .inline-button {
-  color: white;
-  padding: 1em 0;
+  padding: 1em 2em;
   text-align: center;
-  width: 25%;
   text-decoration: none;
-  border-radius: 4px;
-  font-weight: 700; }
+  outline: none;
+  -webkit-border: none; }
 
 #home-content {
   background-color: #d7006d;
-  color: white; }
+  color: white;
+  text-align: center; }
 
 .risk {
   left: 0;
@@ -815,8 +823,10 @@ input[type="submit"], .inline-button {
       width: 9%; }
 
 .prompt {
+  font-family: 'itc_avant_garde_gothic_proMd', helvetica-neue, helvetica, sans-serif;
   text-align: center;
-  font-size: 1.5em; }
+  -webkit-font-smoothing: antialiased;
+  font-size: 2em; }
 
 #fixed-messages {
   position: fixed;
@@ -835,15 +845,16 @@ input[type="submit"], .inline-button {
     font-style: italic;
     color: #888888; }
   #fixed-messages .action {
-    background-color: white;
+    background-color: #d7006d;
+    color: white !important;
     margin: 1em auto;
     border: 2px solid #d7006d;
     color: #d7006d;
     font-weight: bold;
     padding: .5em 1em; }
     #fixed-messages .action:hover {
-      background-color: #d7006d;
-      color: white; }
+      background-color: white;
+      color: #d7006d !important; }
 
 #fixed-messages.visible {
   opacity: 1 !important; }
@@ -933,6 +944,31 @@ input[type="submit"], .inline-button {
 
 .nude-bg {
   background-color: rgba(255, 180, 170, 0.75); }
+
+#family-history-module {
+  background-color: #f63200;
+  padding: 4em; }
+
+.blank.uncover {
+  height: 62.5em;
+  margin: 1em;
+  position: relative;
+  z-index: 5; }
+
+#fhmodule-background {
+  position: fixed;
+  z-index: -1;
+  width: 60%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f63200;
+  padding: 2em 5% 2em; }
+  #fhmodule-background img {
+    border: 2px solid white;
+    display: block;
+    width: 100%;
+    margin: auto; }
 
 .know-your-normal .photo-bg {
   background-image: url("../img/education/knowyournormal.jpg"); }

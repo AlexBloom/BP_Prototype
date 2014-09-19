@@ -72,8 +72,8 @@ label {
 			margin:0;
 		}
 		img{
-			width:8em;
-			margin:.25em auto 0;
+			width:6em;
+			margin:.4em auto 0;
 		}
 		p{
 			margin:.25em 0;
@@ -310,11 +310,11 @@ section{
 }
 
 input{
-	margin:1em 0;
-	outline:none;
-	padding:1em 0;
-	//height:2em;
-	font-size:1em;
+	//margin:1em 0;
+	//outline:none;
+	//padding:1em 0;
+	////height:2em;
+	//font-size:1em;
 }
 
 input[type="text"] {
@@ -330,14 +330,12 @@ transition: border-color 0.2s;
 }
 
 input[type="submit"], .inline-button {
-color: white;
-padding: 1em 0;
+//color: white;
+padding: 1em 2em;
 text-align:center;
-width:25%;
 text-decoration: none;
-border-radius: 4px;
-font-weight: 700;
-
+outline:none;
+-webkit-border:none;
 }
 
 
@@ -349,6 +347,7 @@ font-weight: 700;
 #home-content{
 	background-color:$pink;
 	color:$white;
+	text-align:center;
 }
 //Risk Base
 .risk{
@@ -400,8 +399,10 @@ font-weight: 700;
 }
 
 .prompt{
+	font-family: /*'itc_avant_garde_pro_mdbold',*/ 'itc_avant_garde_gothic_proMd', helvetica-neue, helvetica, sans-serif;
 	text-align:center;
-	font-size:1.5em;
+	-webkit-font-smoothing:antialiased;
+	font-size:2em;
 }
 
 #fixed-messages{	
@@ -412,15 +413,16 @@ font-weight: 700;
 		color:$medium-grey;
 	}	
 	.action{
-		background-color:$white;
+		background-color:$pink;
+		color:$white!important;
 		margin:1em auto;
 		border:2px solid $pink;
 		color:$pink;
 		font-weight:bold;
 		padding:.5em 1em;
 		&:hover{
-			background-color:$pink;	
-			color:$white;
+			background-color:$white;	
+			color:$pink!important;
 		}
 	}
 	position:fixed;
@@ -531,6 +533,45 @@ font-weight: 700;
 }
 .nude-bg{
 	background-color:$nude-translucent;
+}
+
+#family-history-module{
+	background-color:$red;
+	padding:4em;
+}
+
+.fhh-module{
+	
+}
+
+.blank.uncover{
+	height:(em(1000));
+	
+	margin:1em;
+	position:relative;
+	z-index:5;
+}
+
+#fh-module{
+	
+}
+
+#fhmodule-background{
+	position:fixed;
+	z-index:-1;
+	width:60%;
+	top:0;
+	right:0;
+	bottom:0;
+ background-color:$red;
+ padding:2em 5% 2em;
+ 
+ img{
+	  border:2px solid $white;
+	 display:block;
+	 width:100%;
+	 margin:auto;
+ }	
 }
 
 .know-your-normal{

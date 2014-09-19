@@ -82,7 +82,30 @@ $(document).ready(function () {
   	 });
 
 
+	 
+	 // Active Link Highlighting
 
+	  // Add Current Class to ScrollNav of Currently Depressed Item
+	   	$('.scrollnav-link').click(function() {
+	   		$('.scrollnav-link').removeClass('current');
+	   		$(this).addClass('current');
+	   	});	   
+
+	 //Side Nav Highlighting 
+	 $(function(){
+	     $(document).scroll(function(){
+	         $('.anchor').each(function(){
+	             var $this = $(this),
+	             pos   = $this.offset().top - $(window).scrollTop();
+	             if(pos < 100 ){
+	                 $('.scrollnav-link').removeClass('current');
+	                 $('.scrollnav-link[href="#'+$this.attr('id')+'"]').addClass('current');
+	             }
+	         });
+
+	     });
+	 });
+	 
 
 
 
