@@ -424,6 +424,34 @@ article {
     max-width: 50em;
     margin: 0 auto; }
 
+.sequence-container {
+  position: relative;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 37.5em;
+  overflow-y: hidden;
+  overflow-x: hidden; }
+
+.sequence {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow-y: hidden;
+  overflow-x: auto; }
+  .sequence img {
+    width: 2000%; }
+
+.sequence-overlay-content {
+  padding: 0 4em;
+  margin: auto auto 1em auto;
+  max-width: 800;
+  z-index: 2;
+  color: white; }
+
 .swipe {
   overflow: hidden;
   visibility: hidden;

@@ -276,6 +276,46 @@ article{
 
 
 
+// Sequence Styles
+
+.sequence-container{
+	position:relative;
+	width:100%;
+    display: -webkit-flex;
+    display: flex;
+	min-height:(em(600));
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
+.sequence{
+	position:absolute;
+	//width:100%;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:1;
+	overflow-y:hidden;
+	overflow-x:auto;
+	img{
+		width:2000%;
+	}
+}
+.sequence-overlay-content{
+	//position:absolute;
+	//bottom:0;
+	padding:0 4em;
+	margin:auto auto 1em auto;
+	max-width:800;
+	z-index:2;
+	color:$white;
+}
+
+
+
+
+
+
 // Swipe Classes
 
 .swipe {
