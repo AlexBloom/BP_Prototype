@@ -1,3 +1,3 @@
 //PNG Sequence Fire
 /* Author: Nick Jones
-*/$(document).ready(function(){var e=$(window),t=$(document),n=!1;Modernizr.cssfilters&&(blurEnabled=!0);var r,i,s=0,o=0,u=0,a,f=!1,l=0,c={init:function(){function t(t){r=e.height();i=e.width();n=!0}function o(e){s=Math.min(0,s+e);l=s;$(".sequence").css({left:Math.min(0,Math.max(-44*i,Math.round(l/18)*i))})}e.bind("resize",t);e.bind("keydown",keyHandler);e.mouseup(function(){e.unbind("mousemove")});e.bind("mousewheel",function(e,t){stopEasing();o(t*20);e.preventDefault()});t();startLoop()}};c.init()});
+*/$(document).ready(function(){var e=$(window),t=$(document),n=!1;Modernizr.cssfilters&&(blurEnabled=!0);var r,i,s=0,o=0,u=0,a=0,f={init:function(){function o(t){r=e.height();i=e.width();n=!0}function u(){s=Math.floor(t.scrollTop()/20);a=s;$(".sequence").css({left:-s*i})}e.bind("resize",o);e.mouseup(function(){e.unbind("mousemove")});e.bind("mousewheel",function(e,t){u()});o()}};f.init()});

@@ -286,8 +286,9 @@ article{
 	min-height:(em(600));
 	overflow-y:hidden;
 	overflow-x:hidden;
+	margin:(em(800)) 0;
 }
-.sequence{
+.sequence-wrap{
 	position:absolute;
 	//width:100%;
 	left:0;
@@ -297,8 +298,16 @@ article{
 	z-index:1;
 	overflow-y:hidden;
 	overflow-x:auto;
-	img{
-		width:2000%;
+	.sequence{
+		position:absolute;
+		//display:block;
+		left:0;
+		width:6000%;
+		img{
+			display:block;
+			float:left;
+			width:25%;
+		}
 	}
 }
 .sequence-overlay-content{

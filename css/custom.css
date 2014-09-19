@@ -431,9 +431,10 @@ article {
   display: flex;
   min-height: 37.5em;
   overflow-y: hidden;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  margin: 50em 0; }
 
-.sequence {
+.sequence-wrap {
   position: absolute;
   left: 0;
   right: 0;
@@ -442,8 +443,14 @@ article {
   z-index: 1;
   overflow-y: hidden;
   overflow-x: auto; }
-  .sequence img {
-    width: 2000%; }
+  .sequence-wrap .sequence {
+    position: absolute;
+    left: 0;
+    width: 6000%; }
+    .sequence-wrap .sequence img {
+      display: block;
+      float: left;
+      width: 25%; }
 
 .sequence-overlay-content {
   padding: 0 4em;
