@@ -89,7 +89,7 @@ $(document).ready(function () {
      //$("#video-overlay-1").addClass('closed');
      $(window).scroll(function() {
          var y_scroll_pos = window.pageYOffset;
-         var scroll_pos_test = 400;             
+         var scroll_pos_test = 200;             
      	// set to whatever you want it to be
          if(y_scroll_pos > scroll_pos_test) {
      	   $("#video-overlay-1").addClass('visible');
@@ -99,7 +99,7 @@ $(document).ready(function () {
   		$("#video-overlay-1").removeClass('visible');
      	}
 		
-		if(y_scroll_pos > 600){
+		if(y_scroll_pos > 400){
 			$("#video-overlay-1").removeClass('visible');
 		}
 		
@@ -111,7 +111,7 @@ $(document).ready(function () {
   		$("#video-overlay-2").removeClass('visible');
      	}
 		
-		if(y_scroll_pos > 950){
+		if(y_scroll_pos > 600){
 			$("#video-overlay-2").removeClass('visible');
 		}
 		

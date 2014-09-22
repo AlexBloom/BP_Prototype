@@ -445,7 +445,7 @@ article {
   min-height: 37.5em;
   overflow-y: hidden;
   overflow-x: hidden;
-  margin: 50em 0; }
+  margin: 0 0 50em; }
 
 .sequence-wrap {
   position: absolute;
