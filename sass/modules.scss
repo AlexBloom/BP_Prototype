@@ -306,6 +306,7 @@ article{
 .sequence-wrap{
 	position:absolute;
 	//width:100%;
+	overflow:hidden;
 	left:0;
 	right:0;
 	top:0;
@@ -326,16 +327,56 @@ article{
 	}
 }
 .sequence-overlay-content{
-	padding:0 4em;
-	margin:1em auto auto auto;
-	max-width:800;
+	position:absolute;
+	padding:5em;
+	margin:0;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	//max-width:800;
 	z-index:2;
 	color:$white;
+	background-color:rgba(215,0,109,0.5);
 	.action{
+		margin:26em auto 0;
 		&:hover{
-			color:$grey;
+			color:$white;
 		}
 	}
+	&.lifestyle-bg{
+		
+	}
+}
+
+.video-text-overlay{
+	position:absolute;
+	z-index:500;
+	padding:0 5em;
+	opacity:0;
+	//max-width:0;
+	color:$white;
+	text-align:center;
+	font-size:2.5em;
+	font-family: 'itc_avant_garde_pro_mdbold', helvetica-neue, helvetica, sans-serif;
+	-webkit-font-smoothing:antialiased;
+	
+	@include half-second-transition;
+	&.visible{
+		opacity:1;
+		max-width:70%;
+	}
+}
+
+
+
+#video-overlay-1{
+	top:0;
+	margin:1em auto;
+}
+#video-overlay-2{
+	bottom:0;
+	margin:1em auto 4em;
 }
 
 

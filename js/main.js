@@ -80,8 +80,43 @@ $(document).ready(function () {
 		$('#toggle').removeClass('close');
 		$('body').removeClass('overflow-hidden')
   	 });
+	 
+	 // Show & Hide Video Overlay Scrolls
+	 
+     //$("#video-overlay-1").addClass('closed');
+     $(window).scroll(function() {
+         var y_scroll_pos = window.pageYOffset;
+         var scroll_pos_test = 400;             
+     	// set to whatever you want it to be
+         if(y_scroll_pos > scroll_pos_test) {
+     	   $("#video-overlay-1").addClass('visible');
+         }
+     	else
+     	{
+  		$("#video-overlay-1").removeClass('visible');
+     	}
+		
+		if(y_scroll_pos > 600){
+			$("#video-overlay-1").removeClass('visible');
+		}
+		
+        if(y_scroll_pos > scroll_pos_test+300) {
+    	   $("#video-overlay-2").addClass('visible');
+        }
+     	else
+     	{
+  		$("#video-overlay-2").removeClass('visible');
+     	}
+		
+		if(y_scroll_pos > 950){
+			$("#video-overlay-2").removeClass('visible');
+		}
+		
+     });
+	 
 
-
+	 
+	 
 	 
 	 // Active Link Highlighting
 

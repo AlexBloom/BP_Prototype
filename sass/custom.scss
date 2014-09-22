@@ -406,11 +406,42 @@ outline:none;
 }
 
 #fixed-messages{	
+	.fact-callout{
+		font-family: 'itc_avant_garde_pro_mdbold', helvetica-neue, helvetica, sans-serif;
+		-webkit-font-smoothing:antialiased;
+		font-size:1.25em;
+		letter-spacing:.1em;
+		line-height:1.25em;
+		float:left;
+		width:17%;
+		text-align:center;
+		color:$medium-grey;
+		padding:1em 0;
+		margin:1.5em 0;
+		
+	}
+	.fact{
+		float:left;
+		width:80%;
+		border-left:1px solid $medium-grey;
+		padding:0;
+		margin:.5em 0;
+	}
+	.data-number{
+		font-family: 'itc_avant_garde_pro_mdbold', helvetica-neue, helvetica, sans-serif;
+		color:$black;
+		font-size:2em;
+		font-weight:bold;
+		vertical-align:middle;
+		font-style:normal;
+	}
+	
 	p{
+		font-family:'itc_avant_garde_gothic_proMd', helvetica-neue, helvetica, sans-serif;
 		text-align:center;
 		margin:.5em 0;
-		font-style:italic;
-		color:$medium-grey;
+		//font-style:italic;
+		color:$grey;
 	}	
 	.action{
 		background-color:$pink;
@@ -528,6 +559,10 @@ outline:none;
 	background-image:url('../img/education/lifestyle.jpg');
 	}
 }
+
+//lifestyle
+
+
 
 .family-history{
 	
