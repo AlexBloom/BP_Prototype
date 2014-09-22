@@ -833,6 +833,9 @@ input[type="submit"], .inline-button {
   background-color: #d7006d;
   color: white; }
 
+#launch-assess {
+  display: block; }
+
 #drink-slider {
   position: relative; }
   #drink-slider .slidebar {
@@ -867,7 +870,9 @@ input[type="submit"], .inline-button {
   bottom: 0;
   z-index: 1000;
   background-color: white;
+  padding: 0;
   opacity: 0;
+  max-height: 0;
   -webkit-transition-duration: .25s;
   -moz-transition-duration: .25s;
   -ms-transition-duration: .25s;
@@ -916,6 +921,7 @@ input[type="submit"], .inline-button {
       color: #d7006d !important; }
 
 #fixed-messages.visible {
+  max-height: 100%;
   opacity: 1 !important; }
 
 #assess-return {
@@ -937,6 +943,8 @@ input[type="submit"], .inline-button {
     cursor: pointer; }
     #assess-return .return-message:hover {
       color: #888888; }
+    #assess-return .return-message a {
+      color: #555559; }
 
 #assess-return.overlay {
   opacity: 1;

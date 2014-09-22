@@ -370,6 +370,9 @@ outline:none;
 	color:$white;
 	
 }
+#launch-assess{
+	display:block;
+}
 #drink-slider{
 	position:relative;
 	.slidebar{
@@ -461,13 +464,14 @@ outline:none;
 	bottom:0;
 	z-index:1000;
 	background-color:$white;
-	//max-height:0;
+	padding:0;
 	opacity:0;
+	max-height:0;
 	@include quarter-second-transition;
 }
 
 #fixed-messages.visible{
-	//max-height:auto!important;
+	max-height:100%;
 	opacity:1!important;
 }
 #assess-return{
@@ -490,6 +494,9 @@ outline:none;
 		&:hover{
 			color:$medium-grey;
 			
+		}
+		a{
+			color:$grey;
 		}
 	}
 }

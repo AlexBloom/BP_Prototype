@@ -1,8 +1,11 @@
 
 $(document).ready(function () {
-
 		// Fire LocalScroll
-		//$('body').localScroll();
+		//$('.scrollpane').localScroll({offset:0});
+		
+		$('#family-history-home').localScroll({
+		   target:'#family-history-home'
+		});
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
 		$('.full-screen-container').css('min-height',$(window).height());
