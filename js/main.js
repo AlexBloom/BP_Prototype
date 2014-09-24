@@ -8,82 +8,78 @@ $(document).ready(function () {
 		});
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
-		$('.full-screen-container').css('min-height',$(window).height());
-		$('.risk section').css('min-height',$(window).height()-150);
-		$('#family-history-home .vertical-container').css('min-height',$(window).height());
+		$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro').css('min-height',$(window).height()-30);
+		$('.education-header-link').css('min-height',$(window).height()/3-8);
 		
-
+		
 		$(window).resize(function() {
-			$('.full-screen-container').css('min-height',$(window).height());
-			$('.risk section').css('min-height',$(window).height()-150);
-			$('#family-history-home .vertical-container').css('min-height',$(window).height());
+			$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro').css('min-height',$(window).height()-30);
+			$('.education-header-link').css('min-height',$(window).height()/3-8);
 		});
 
 
-		//Sides Toggle
-		
-		$('.risk').click(function(){
-			$(this).addClass('open');
-			$(this).removeClass('closed');
-			$('.scrollnav').addClass('right');
-			$('.scrollnav').removeClass('left');
-			$('.education').addClass('closed');
-			$('#fixed-messages').addClass('open');
-			$('#fixed-messages').removeClass('closed');
-		});
-		
-		$('.education').click(function(){
-			$(this).addClass('open');
-			$(this).removeClass('closed');
-			$('.scrollnav').addClass('left');
-			$('.scrollnav').removeClass('right');
-			$('.risk').addClass('closed');
-			$('#fixed-messages').addClass('closed');
-			$('#fixed-messages').removeClass('open');
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Risk Toggle 
+	 *
+	*/		
+		$('#Risk-Toggle, #Launch-Assessment').click(function(){
+			//Toggle Style
+			$(this).addClass('active');
+			$('Education-Toggle').removeClass('active');
 			
-			//$('#assess-return').addClass('overlay');
+			//Expand Assessment
+			$('#Risk-Assessment').addClass('open');
+			$('#Risk-Assessment').removeClass('closed');
 			
+			//Hide Education
+			$('#Education-Modules').addClass('closed');
+			$('#Education-Modules').removeClass('open');
+
+			//Show Facts & Risk Meter
+			$('#Facts-Container, #Risk-Meter').addClass('open');
+			$('#Facts-Container, #Risk-Meter').removeClass('closed');
 		});
 		
-		$('#open-education').click(function(){
-			$('.education').addClass('open');
-			$('.education').removeClass('closed');
-			$('.scrollnav').addClass('left');
-			$('.scrollnav').removeClass('right');
-			$('.risk').addClass('closed');
-			$('#fixed-messages').addClass('closed');
-			$('#fixed-messages').removeClass('open');
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Education Toggle 
+	 *
+	*/
+		$('#Education-Toggle').click(function(){
+			//Toggle Style
+			$(this).addClass('active');
+			$('Education-Toggle').removeClass('active');
+			
+			//Hide Assessment
+			$('#Risk-Assessment').addClass('closed');
+			$('#Risk-Assessment').removeClass('open');
+			
+			//Expand Education
+			$('#Education-Modules').addClass('open');
+			$('#Education-Modules').removeClass('closed');
+			
+			//Hide Facts & Risk Meter, Show Education Meter
+			$('#Facts-Container, #Risk-Meter').addClass('closed');
+			$('#Facts-Container, #Risk-Meter').removeClass('open');
 		});
 		
-		$('#launch-assess').click(function(){
-			$('#fixed-messages').addClass('visible');
-		});
-
-
-	//Menu Toggle
-	$('#site-header').addClass('closed');
-	$('#main').addClass('open');
-
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Close Fixed Elements in Assessment 
+	 *
+	*/				
+		$('#Facts-Container, #Risk-Meter').addClass('closed');
    
-	$('#nav-toggle').click(function(){
-		//$(this).toggleClass('close');
-	$('#site-header').toggleClass('closed');
-	$('#site-header').toggleClass('open');
-	$('#main').toggleClass('open');
-	$('#main').toggleClass('closed');
-	$('body').toggleClass('overflow-hidden');
-	  });
-	
-	  
-  	$('.main').click(function(){
-  		$('#site-header').addClass('closed');
-  		$('#site-header').removeClass('open');
-		$('.main').removeClass('menu-open');
-		$('.main').addClass('menu-closed');
-		$('#toggle').removeClass('close');
-		$('body').removeClass('overflow-hidden')
-  	 });
-	 
+		$('.assess a').click(function(){
+			$(this).parent().parent().addClass('done');
+		});
+  	
+
+
+
+
+
 	 // Show & Hide Video Overlay Scrolls
 	 
      //$("#video-overlay-1").addClass('closed');
@@ -116,11 +112,15 @@ $(document).ready(function () {
 		}
 		
      });
-	 
 
-	 
-	 
-	 
+	
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Not Currently In Use
+	 *
+	*/
+	
+	
 	 // Active Link Highlighting
 
 	  // Add Current Class to ScrollNav of Currently Depressed Item
@@ -143,14 +143,5 @@ $(document).ready(function () {
 
 	     });
 	 });
-	 
-
-
-
-	 
-
-
-
-
 
  });
