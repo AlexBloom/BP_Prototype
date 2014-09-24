@@ -5,6 +5,18 @@
 			
 			<!-- LEFT -->
 			<section id="Risk-Assessment" class="scrollpane">
+				
+				<section id="Assessment-Intro" class="vertical-container">
+					<div class="vertically-centered">
+						<a id="Launch-Assessment" href="#assess-step-1">
+						<p class="mobile-hide intro"> Bright Pink created the ‘Assess Your Risk’ tool to help you understand your personal level of cancer risk. <br> This information can be life saving.</p>
+						<p class=""><strong>Let's assume you have cancer until you...</strong></p>
+						<h1>Assess Your Risk</h1>
+							<!-- <button class="action"> Understand Your Risk  </button> -->
+						</a>
+					</div>		
+				</section>
+
 				<div id="Risk-Meter">
 					<!-- <p>Your overall risk:</p> -->
 					<div class="bargraph clearfix">
@@ -18,6 +30,7 @@
 				</div>
 				
 				<div class="assessment-wrap">
+					
 					<section id="assess-step-1" class="vertical-container assess anchor">
 						<div class="vertically-centered">
 							<span class="number-icon">1</span>

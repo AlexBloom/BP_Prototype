@@ -71,10 +71,16 @@ $(document).ready(function () {
 	*/				
 		$('#Facts-Container, #Risk-Meter').addClass('closed');
    
+   	 	
+   
 		$('.assess a').click(function(){
 			$(this).parent().parent().addClass('done');
 		});
-  	
+		
+		$('#Assessment-Intro').click(function(){
+			$(this).addClass('done');
+		});
+		
 
 
 

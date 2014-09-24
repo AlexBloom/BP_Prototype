@@ -212,8 +212,23 @@ nav {
 	color:$pink;
 	background-color:$pink;
 	padding:1em 2em;
+	position:absolute;
+	z-index:16;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	@include half-second-transition;
+
 	a{
 		color:$white;
+	}
+	&.done{
+		//z-index:0;
+		//width:0;
+		background-color:$grey;
+		left:120%;
+		right:-180%;
 	}
 }
 #Assessment-Nav{

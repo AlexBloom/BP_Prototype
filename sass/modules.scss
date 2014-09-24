@@ -21,7 +21,10 @@ h1{
 		font-size:4em;
 	}
 }
-
+a{
+	-webkit-border:none;
+	outline:none;
+}
 .bargraph{
 	position:relative;
 	width:50%;
@@ -191,15 +194,31 @@ h1{
 	line-height: 2em;
 }
 
+.action-wrap{
+	flex:1;
+	margin:auto;
+}
 .action{
 	font-family: 'itc_avant_garde_pro_mdbold', /*'itc_avant_garde_gothic_proMd',*/ helvetica-neue, helvetica, sans-serif;
 	font-weight:normal;
 	text-transform:uppercase;
 	letter-spacing:.15em;
 	-webkit-font-smoothing:antialiased;
-	padding:1em 2.5em;
 	background-color:$white;
 	border:2px solid $white;
+	font-size:.75em;
+	padding:.75em;
+	margin:0 .25em;
+	@media screen and (min-width:(em(800))){
+		font-size:.8em;
+		padding:.8em 1.5em;
+		
+	}
+	@media screen and (min-width:(em(1200))){
+		font-size:1em;
+		padding:.75em 1.5em;
+		
+	}
 	&:hover{
 		color:$white;
 		background-color:transparent;
@@ -207,29 +226,20 @@ h1{
 	@include half-em-border-radius;
 	@include quarter-second-transition;
 }
-
 button.action{	
-	display:block;
+	display:inline-block;
 	margin:4em auto 1em;
 	text-decoration:none!important;
 	outline:none;	
 }
-
 input.action{
 	box-sizing: content-box;
-	display:block;
+	display:inline-block;
 	text-align:center;
 	float:left;
 }
 
-.assess{
-	button, input{
-		color:$pink;
-		&:hover{
-			
-		}
-	}
-}
+
 
 .family-history{
 	color:$white;
@@ -245,7 +255,6 @@ input.action{
 		}
 	}
 }
-
 button.lifestyle, input.lifestyle{
 	color:$pink;
 	&:hover{
