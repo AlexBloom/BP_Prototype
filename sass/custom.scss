@@ -65,6 +65,13 @@ nav {
 		text-align:center;
 		float:left;
 		-webkit-flex: 1;
+		.bar-title{
+			@include quarter-second-transition;
+			&.closed{
+				margin-top:-2em;
+				opacity:0;
+			}
+		}
 	}		
 	#logo{
 		width:5em;

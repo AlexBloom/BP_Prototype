@@ -1,4 +1,6 @@
 
+$('#Facts-Container, #Risk-Meter, .bar-title').addClass('closed');
+
 $(document).ready(function () {
 		// Fire LocalScroll
 		//$('.scrollpane').localScroll({offset:0});
@@ -69,9 +71,6 @@ $(document).ready(function () {
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Close Fixed Elements in Assessment 
 	 *
 	*/				
-		$('#Facts-Container, #Risk-Meter').addClass('closed');
-   
-   	 	
    
 		$('.assess a').click(function(){
 			$(this).parent().parent().addClass('done');
@@ -79,6 +78,7 @@ $(document).ready(function () {
 		
 		$('#Assessment-Intro').click(function(){
 			$(this).addClass('done');
+			$('.bar-title').removeClass('closed');
 		});
 		
 

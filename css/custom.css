@@ -642,6 +642,15 @@ nav a {
     text-align: center;
     float: left;
     -webkit-flex: 1; }
+    #site-header .bar-module .bar-title {
+      -webkit-transition-duration: .25s;
+      -moz-transition-duration: .25s;
+      -ms-transition-duration: .25s;
+      -o-transition-duration: .25s;
+      transition-duration: .25s; }
+      #site-header .bar-module .bar-title.closed {
+        margin-top: -2em;
+        opacity: 0; }
   #site-header #logo {
     width: 5em;
     height: 2em;
