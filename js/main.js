@@ -1,5 +1,7 @@
 
 $('#Facts-Container, #Risk-Meter, .bar-title').addClass('closed');
+$('.content-wrapper').addClass('collapsed');
+$('.education-prompt').addClass('hidden');
 
 $(document).ready(function () {
 		// Fire LocalScroll
@@ -10,13 +12,15 @@ $(document).ready(function () {
 		});
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
-		$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro').css('min-height',$(window).height()-30);
-		$('.education-header-link').css('min-height',$(window).height()/3-8);
 		
+		$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height()-30);
+		$('.education-header-link').css('min-height',$(window).height()/3-8);
+		$('#Intro').css('min-height',$(window).height());
 		
 		$(window).resize(function() {
-			$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro').css('min-height',$(window).height()-30);
+			$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height()-30);
 			$('.education-header-link').css('min-height',$(window).height()/3-8);
+			$('#Intro').css('min-height',$(window).height());
 		});
 
 
@@ -24,7 +28,12 @@ $(document).ready(function () {
 	 *
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Risk Toggle 
 	 *
-	*/		
+	*/	
+	
+  function OpenLeft(){
+ 	
+  }
+		
 		$('#Risk-Toggle, #Launch-Assessment').click(function(){
 			//Toggle Style
 			$(this).addClass('active');
@@ -48,6 +57,12 @@ $(document).ready(function () {
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Education Toggle 
 	 *
 	*/
+	
+	
+    function OpenRight(){
+  	
+    }
+	
 		$('#Education-Toggle').click(function(){
 			//Toggle Style
 			$(this).addClass('active');
@@ -68,7 +83,7 @@ $(document).ready(function () {
 		
 	/*
 	 *
-	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Close Fixed Elements in Assessment 
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Progress Through Assessment
 	 *
 	*/				
    
@@ -81,10 +96,44 @@ $(document).ready(function () {
 			$('.bar-title').removeClass('closed');
 		});
 		
+		
+		// Swap Numbers into Progress Counter
+			$('.assess').click(function (){
+				
+				$('#Assess-Count').toggleClass('flip');
+				
+	            $('#Assess-Count').html($(this).next().find('.number-icon').html()); //or any other way you want to get the desc
+	            return; //break the loop
+				
+			});
+		
 
 
 
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Opening & Navigation Education Sub-Sections
+	 *
+	*/	
 
+	
+	
+	$('.education-header-link').click(function(){
+		$('.education-header-link').css('min-height',$(window).height()/3);
+		$('.content-wrapper').addClass('collapsed');
+		$('.education-prompt').addClass('hidden');
+		$(this).css('min-height',$(window).height());
+		$(this).parent().next().removeClass('collapsed');
+		$(this).find('.education-prompt').removeClass('hidden');
+	});
+
+
+
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Video Stuff
+	 *
+	*/	
 
 	 // Show & Hide Video Overlay Scrolls
 	 
@@ -118,6 +167,12 @@ $(document).ready(function () {
 		}
 		
      });
+
+
+
+
+
+
 
 	
 	/*

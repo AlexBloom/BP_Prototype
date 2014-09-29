@@ -6,8 +6,8 @@ $red:rgb(246,50,0);
 $nude:rgb(255,180,170);
 
 //Primary
-$pink-translucent:rgba(215,0,109,0.65);
-$red-translucent:rgba(246,50,0,0.65);
+$pink-translucent:rgba(215,0,109,0.75);
+$red-translucent:rgba(246,50,0,0.75);
 $nude-translucent:rgba(255,180,170,0.75);
 //Secondary
 $yellow-translucent:rgba(255,217,35,0.65);
@@ -34,7 +34,11 @@ $near-white: #f9f9f9;
 $white: #FFF;
 
 
-
+@mixin pink-pattern{
+	background:url(
+		data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAI3GXL/M8L4II46w2RGsACMA2IzInNAAgBnNQtKArpfgQAAAABJRU5ErkJggg==
+	) repeat;
+}
 
 /* EMS ======= */
 
@@ -126,10 +130,10 @@ filter: dropshadow(color=#ffffff, offx=1, offy=1);
 }
 
 @mixin text-shadow{
-text-shadow: 2px 2px 5px rgba(0,0,0,0.95);
--webkit-text-shadow: 2px 2px 5px rgba(0,0,0,0.95);
--moz-text-shadow: 2px 2px 5px rgba(0,0,0,0.95);
--ms-text-shadow: 2px 2px 5px rgba(0,0,0,0.95);
--o-text-shadow: 2px 2px 5px rgba(0,0,0,0.95);
+text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+-webkit-text-shadow:02px 0px 5px rgba(0,0,0,0.5);
+-moz-text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+-ms-text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+-o-text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 filter: dropshadow(color=#000000, offx=2, offy=2);
 }

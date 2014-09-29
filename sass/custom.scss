@@ -199,17 +199,34 @@ nav {
 }
 
 #Intro{
-		width:100%;
-		flex:1 100%;
-		background-color:$pink;
-		color:$white;
+	display:flex;
+	flex-flow: row wrap;
+	position:relative;
+	text-align:center;
+	padding-top:30px;
+	overflow:hidden;
+		//width:100%;
+		//flex:1 100%;
+		//background-color:$pink;
+		color:$grey;
+		//@include pink-pattern;
+		border:1em solid $pink;
 	h1{
-		//color:$pink;
+		color:$pink;
 	}
 	.full-screen-content{
 		padding: 4em;
 	}
 	//background-color:$white;
+	.action{
+		color:$white;
+		background-color:$pink;
+		border:2px solid $pink;
+		&:hover{
+			background-color:$white;
+			color:$pink;
+		}
+	}
 }
 
 
@@ -366,6 +383,7 @@ nav {
 	font-size: 1.25em;
 	line-height: 2em;
 	letter-spacing:.15em;
+	transition:.5s;
 	sup{
 		//display:inline-block;
 		//margin:1em 0 0 -.5em;
@@ -382,6 +400,21 @@ nav {
 		
 	}
 }
+#Assess-Count{
+	transition:.5s;
+	transform:rotateY(0deg);	
+	&.flip{
+	 transition:.5s;
+	 transform:rotateY(360deg);	
+	 //opacity: 0.2;
+	 //transition: opacity .55s ease-in-out;
+	 //opacity:1;
+	 //transition-delay:.5s;
+	 //transition:opacity .55s ease-in-out;
+	}
+	
+}
+
 .number-icon{
 	display:none;
 }
@@ -480,6 +513,7 @@ nav {
 			color:$pink;
 			font-weight:bold;
 			border-radius:none;
+			cursor:pointer;
 			&:hover{
 				background-color:$white;	
 				color:$pink!important;
@@ -517,36 +551,83 @@ nav {
 	@include quarter-second-transition;
 	padding: 0;	
 	h1{
-		color:$white;
-		padding:0 .5em;
+		//color:$white;
+		padding:0 .15em;
 		margin:0;
 	}
 	//background-size:cover;
-	background-size:150% ;
+	background-size:cover ;
 	background-position:50% 20%;
+	background-repeat:no-repeat;
 	&:hover{
-		background-size:180%;
+		//background-size:180%;
 	}
 }
 
 .education-header-link{
 	display:flex;
+	color:$white;
+	padding: 0 4em;
+	//background-color:$pink-translucent;
+	@include quarter-second-transition;
+	&:hover{
+		color:$white!important;
+		background-color:transparent;
+	}
+	h1{
+		//@include text-shadow;
+		//color:$black;
+		//@include one-em-border-radius;
+	}
 }
 #l-color{ 
-	background-color:$pink-translucent;
+	&:hover{
+		h1{
+			//background-color:$pink;
+		}
+		background-color:$pink-translucent;
+	}
 }
 #fh-color{ 
-	background-color:$red-translucent;
+	&:hover{
+		h1{
+			//background-color:$red;
+		}
+		background-color:$red-translucent;
+	}
 }
 #kyn-color{ 
-	background-color:$nude-translucent;
+	&:hover{
+		h1{
+			//background-color:$nude;
+		}
+		background-color:$nude-translucent;
+	}
 }
 
 //Education Content
 .content-wrapper{
-	display:none;
-	&.closed{
+	max-height:100%;
+	padding:0;
+	margin:0;
+	@include quarter-second-transition;
+	&.collapsed{
 		opacity:0;
+		max-height:0;
+		
+		overflow: hidden;
+	}
+}
+.education-prompt{
+	max-height:100%;
+	opacity:1;
+	
+	.hidden{
+		max-height:0;
+		opacity:0;
+		margin:0;
+		padding:0;
+		overflow:hidden;
 	}
 }
 .overflow-hidden{
