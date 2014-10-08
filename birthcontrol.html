@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		
+		<style>
+		#birth-control{position:relative;}
+		#birth-control:after{
+			position:absolute;
+			display:block;
+			content:' ';
+			width:215px;
+			height:215px;
+			top:162px;
+			left:22px;
+			background-image:url(img/modules/birthcontroldial.png);
+			background-repeat:no-repeat;
+			z-index:-1;
+			
+			/* Chrome, Safari, Opera */
+			    -webkit-animation-name: spinDial;
+			    -webkit-animation-duration: 80s;
+			    -webkit-animation-timing-function: linear;
+			    -webkit-animation-delay: 0;
+			    -webkit-animation-iteration-count: infinite;
+			    /*-webkit-animation-direction: alternate;*/
+			    -webkit-animation-play-state: running;
+			    /* Standard syntax */
+			    animation-name: spinDial;
+			    animation-duration: 80s;
+			    animation-timing-function: linear;
+			    animation-delay: 0;
+			    animation-iteration-count: infinite;
+			   /* animation-direction: alternate;*/
+			    animation-play-state: running;
+		}
+		
+		/* Chrome, Safari, Opera */
+		@-webkit-keyframes spinDial {
+		    from   {transform:rotate(0deg);}
+		    to {transform:rotate(360deg);}
+		}
+
+		/* Standard syntax */
+		@keyframes spinDial {
+		    from   {transform:rotate(0deg);}
+		    to {transform:rotate(360deg);}
+		}
+		
+		
+				
+		</style>
+		
+    </head>
+    <body>
+
+        
+		
+		<section class="full-screen-container">
+			
+			<section class="vertically-centered">
+				<div id="birth-control">
+					<img src="img/modules/birthcontrolcase.png" width="260" height="400" alt="Birthcontrolcase">
+				</div>
+			</section>
+			
+		</section>
+		
+		
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
