@@ -13,16 +13,26 @@ $(document).ready(function () {
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
 		
-		$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height()-30);
+		$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
 		$('.education-header-link').css('min-height',$(window).height()/3-8);
 		$('#Intro').css('min-height',$(window).height());
 		
 		$(window).resize(function() {
-			$('.full-screen-container, .assess, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height()-30);
+			$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
 			$('.education-header-link').css('min-height',$(window).height()/3-8);
 			$('#Intro').css('min-height',$(window).height());
 		});
 
+
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Risk Toggle 
+	 *
+	*/
+
+	$('#Begin').click(function(){
+		$('#Intro').addClass('done');
+	});
 
 	/*
 	 *

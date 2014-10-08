@@ -20,15 +20,18 @@
 
         
 		<header id="site-header" class="flex-container">
-				<div class="bar-module" class="flex1"> 
-					<p class="bar-title"><a id="Risk-Toggle" class="toggle-link" href="#Risk-Assessment">Assess Your Risk</a></p>
-				</div>
-				<div id="logo" class="flex-none">
-					 <a href="index"> <img src="img/brightpink_logo.png" alt="Brightpink Logo"> </a>
-				</div>
-				<div class="bar-module" class="flex1"> 
-					<p class="bar-title"><a id="Education-Toggle" class="toggle-link" href="#Education-Modules">Educate Yourself</a></p>
-				</div>			
+				<a id="logo" class="flex-none circle" href="index">
+					<img src="img/brightpink_logo.png" alt="Brightpink Logo">
+				</a>			
 		</header>
 		
-		<!-- <section id="main" class="flex-container full-screen-container"> -->
+		<nav id="site-nav" class="flex-container">
+			<div class="bar-module" class="flex1"> 
+				<p class="bar-title"><a id="Risk-Toggle" class="toggle-link" href="#Risk-Assessment">Assess Your Risk</a></p>
+			</div>
+			<div class="bar-module" class="flex1"> 
+				<p class="bar-title"><a id="Education-Toggle" class="toggle-link" href="#Education-Modules">Educate Yourself</a></p>
+			</div>
+		</nav>
+		
+			<section id="main" class="flex-container full-screen-container">
