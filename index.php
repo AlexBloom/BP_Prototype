@@ -15,8 +15,8 @@
 				<section id="Assessment-Intro" class="vertical-container">
 					<div class="vertically-centered">
 						<a id="Launch-Assessment" href="#assess-step-1">
-						<p class="mobile-hide intro"> Bright Pink created the ‘Assess Your Risk’ tool to help you understand your personal level of cancer risk. <br> This information can be life saving.</p>
-						<p class=""><strong>Let's assume you have cancer until you...</strong></p>
+						<h3 class="mobile-hide"> Bright Pink created an assessment to help you understand your personal level of cancer risk.</p> <p>This information can be life saving.</h3>
+						<!-- <p class=""><strong>Let's assume you have cancer until you...</strong></p> -->
 						<!-- <h1>Assess Your Risk</h1> -->
 							<button class="action"> Assess Your Risk  </button>
 						</a>
@@ -154,22 +154,17 @@
 				<section id="Education-Intro" class="vertical-container">
 					<div class="vertically-centered">
 						<a id="Launch-Education" href="#Lifestyle">
-						<p class="mobile-hide intro"> Learn about the ways in which you can help understand your risk.</p>
-						<p class=""><strong>Let's assume you have cancer until you...</strong></p>
-						<!-- <h1>Assess Your Risk</h1> -->
+						<h3 class="mobile-hide"> Learn about the ways in which you can help understand your risk.</h3>
+
 							<button class="action"> Educate Yourself </button>
 						</a>
 					</div>		
 				</section>
-				<!-- <div id="Education-Meter" class="bargraph">
-					<div class="bar-one"></div>
-					<div class="bar-two"></div>
-					<div class="bar-three"></div>
-				</div> -->
+	
 				<section id="Lifestyle" class="flex1">					
 					<header class="photo-bg">
 						<a href="#l-color" id="l-color" class="education-header-link vertical-container">
-							<div class="vertically-centered">
+							<div class="vertically-centered box">
 								<h1>Lifestyle</h1>
 							</div>
 						</a>
@@ -180,24 +175,25 @@
 				</section>
 				<section id="FamilyHistory" class="flex1">
 					<header class="photo-bg">
-						<a href="#fh-color" id="fh-color" class="education-header-link vertical-container">
-								<div class="vertically-centered">
+						<div id="fh-color" class="education-header-link vertical-container">
+								<div class="vertically-centered box">
 									<h1>Family History</h1>
 										<div class="education-prompt">
 											<p class="intro">Your family history is the biggest factor in understanding your risk.</p>
-											<button class="action" data-href="#Content-FamilyHistory">
+											 <a href="#fh-frame-1" id="fh-module-link">
+											<button class="action" href="#Content-FamilyHistory">
 												Begin Module
-												<noscript> <a href="#fh-module" id="fh-module-link">Begin Module</a> </noscript>
-											</button>		
+											</button>
+											</a> 		
 										</div>							
 								</div>
-						</a>
+						</div>
 						
 						
 						
 					</header>
 <!--Family History Content -->
-					<section id="Content-FamilyHistory" class="content-wrapper">
+					<section id="Content-FamilyHistory" class="content-wrapper clearfix">
 						
 						<section id="fh-frame-1" class="education-frame fh-frame vertical-container">
 							<div class="vertically-centered">
@@ -247,7 +243,7 @@
 				<section id="KnowYourNormal" class="flex1">
 					<header class="photo-bg">
 						<a href="#kyn-color" id="kyn-color" class="education-header-link vertical-container">
-							<div class="vertically-centered">
+							<div class="vertically-centered box">
 								<h1>Know Your Normal</h1>
 							</div>
 						</a>

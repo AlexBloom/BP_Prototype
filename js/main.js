@@ -14,19 +14,19 @@ $(document).ready(function () {
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
 		
 		$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
-		$('.education-header-link').css('min-height',$(window).height()/3-8);
+		$('.education-header-link').css('min-height',$(window).height()/3);
 		$('#Intro').css('min-height',$(window).height());
 		
 		$(window).resize(function() {
 			$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
-			$('.education-header-link').css('min-height',$(window).height()/3-8);
+			$('.education-header-link').css('min-height',$(window).height()/3);
 			$('#Intro').css('min-height',$(window).height());
 		});
 
 
 	/*
 	 *
-	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Risk Toggle 
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Close Intro 
 	 *
 	*/
 
@@ -40,27 +40,29 @@ $(document).ready(function () {
 	 *
 	*/	
 	
-  function OpenLeft(){
- 	
-  }
-		
-		$('#Risk-Toggle, #Launch-Assessment').click(function(){
-			//Toggle Style
-			$(this).addClass('active');
-			$('Education-Toggle').removeClass('active');
-			
-			//Expand Assessment
-			$('#Risk-Assessment').addClass('open');
-			$('#Risk-Assessment').removeClass('closed');
-			
-			//Hide Education
-			$('#Education-Modules').addClass('closed');
-			$('#Education-Modules').removeClass('open');
+  
+  $("#Risk-Toggle, #Launch-Assessment").click(function(){
+  
 
-			//Show Facts & Risk Meter
-			$('#Facts-Container, #Risk-Meter').addClass('open');
-			$('#Facts-Container, #Risk-Meter').removeClass('closed');
-		});
+	$(this).addClass('active');
+	$('Education-Toggle').removeClass('active');
+	//Expand Assessment
+	$('#Risk-Assessment').addClass('open');
+	$('#Risk-Assessment').removeClass('closed');
+	$('#Assessment-Intro').addClass('done');
+	$('.bar-title').removeClass('closed');
+	
+	//Hide Education
+	$('#Education-Intro').removeClass('done');
+	$('#Education-Modules').addClass('closed');
+	$('#Education-Modules').removeClass('open');
+	//Show Facts & Risk Meter
+	$('#Facts-Container, #Risk-Meter').addClass('open');
+	$('#Facts-Container, #Risk-Meter').removeClass('closed');
+  
+  });
+	
+		
 		
 	/*
 	 *
@@ -68,28 +70,33 @@ $(document).ready(function () {
 	 *
 	*/
 	
+	$('#Education-Toggle, #Launch-Education').click(function(){
+
+		//Toggle Style
+		$(this).addClass('active');
+		$('Risk-Toggle').removeClass('active');
+		
+		$('#Assessment-Intro').removeClass('done');
+		$('#Education-Intro').addClass('done');
+		$('.bar-title').removeClass('closed');
+		
+		//Hide Assessment
+		$('#Risk-Assessment').addClass('closed');
+		$('#Risk-Assessment').removeClass('open');
+		
+		//Expand Education
+		$('#Education-Modules').addClass('open');
+		$('#Education-Modules').removeClass('closed');
+		
+		//Hide Facts & Risk Meter, Show Education Meter
+		$('#Facts-Container, #Risk-Meter').addClass('closed');
+		$('#Facts-Container, #Risk-Meter').removeClass('open');
+   
+	});
 	
-    function OpenRight(){
-  	
-    }
-	
-		$('#Education-Toggle').click(function(){
-			//Toggle Style
-			$(this).addClass('active');
-			$('Education-Toggle').removeClass('active');
+		
 			
-			//Hide Assessment
-			$('#Risk-Assessment').addClass('closed');
-			$('#Risk-Assessment').removeClass('open');
-			
-			//Expand Education
-			$('#Education-Modules').addClass('open');
-			$('#Education-Modules').removeClass('closed');
-			
-			//Hide Facts & Risk Meter, Show Education Meter
-			$('#Facts-Container, #Risk-Meter').addClass('closed');
-			$('#Facts-Container, #Risk-Meter').removeClass('open');
-		});
+		
 		
 	/*
 	 *
@@ -101,21 +108,13 @@ $(document).ready(function () {
 			$(this).parent().parent().addClass('done');
 		});
 		
-		$('#Assessment-Intro').click(function(){
-			$(this).addClass('done');
-			$('.bar-title').removeClass('closed');
+		
+	// Swap Numbers into Progress Counter
+		$('.assess').click(function (){
+			$('#Assess-Count').toggleClass('flip');
+            $('#Assess-Count').html($(this).next().find('.number-icon').html()); //or any other way you want to get the desc
+            return; //break the loop
 		});
-		
-		
-		// Swap Numbers into Progress Counter
-			$('.assess').click(function (){
-				
-				$('#Assess-Count').toggleClass('flip');
-				
-	            $('#Assess-Count').html($(this).next().find('.number-icon').html()); //or any other way you want to get the desc
-	            return; //break the loop
-				
-			});
 		
 
 

@@ -71,7 +71,7 @@ nav {
 		margin:-2em auto 0;
 		border-radius:0 0 50% 50%;
 		background-color:$white;
-		border:.5em solid $pink;
+		border:.5em solid $black;
 		box-sizing:border-box;
 	    -moz-box-sizing:border-box;
 	    -webkit-box-sizing:border-box;
@@ -140,9 +140,9 @@ nav {
 		background-color:$white;
 		border-radius:50% 50% 0 0;
 		padding:.5em .5em 0 .5em;
-		border-top:.5em solid $pink;
-		border-left:.5em solid $pink;
-		border-right:.5em solid $pink;
+		border-top:.5em solid $black;
+		border-left:.5em solid $black;
+		border-right:.5em solid $black;
 		//@include drop-shadow;
 	}
 	a{
@@ -152,9 +152,9 @@ nav {
 		margin:0;
 		text-align:center;
 		padding:.25em 0;
-		color:$pink;
+		color:$medium-grey;
 		&:hover{
-			color:$black;
+			color:$pink;
 		}
 	}
 }
@@ -177,7 +177,7 @@ nav {
 		box-sizing:border-box;
 	    -moz-box-sizing:border-box;
 	    -webkit-box-sizing:border-box;
-		border-right:2px solid $pink;
+		border-right:2px solid $grey;
 		left:0;
 		&.open{
 			left:0;
@@ -215,7 +215,6 @@ nav {
 		}
 	}
 }
-
 #Intro{
 	display:flex;
 	flex-flow: row wrap;
@@ -229,15 +228,30 @@ nav {
 	bottom:0;
 	left:0;
 	right:0;
-	@include quarter-second-transition;
+	@include half-second-transition;
 	&.done{
 		z-index:0;
 		opacity:0;
 		max-height:0;
 		bottom:120%!important;
-		@include quarter-second-transition;
+		@include half-second-transition;
 		//display:none;
 	}
+
+  //  -webkit-animation-name: fadeOut;
+  //     -webkit-animation-duration: 3s;
+  //     -webkit-animation-timing-function: linear;
+  //     -webkit-animation-delay: 0s;
+  //     -webkit-animation-iteration-count: 1;
+  //     -webkit-animation-play-state: running;
+  //	   
+  //     animation-name: fadeOut;
+  //     animation-duration: 3s;
+  //     animation-timing-function: linear;
+  //     animation-delay: 0s;
+  //     animation-iteration-count: 1;
+  //     animation-play-state: running;
+
 	.full-screen-content{
 		padding: 4em;
 	}
@@ -252,6 +266,21 @@ nav {
 	}
 	
 }
+///* Chrome, Safari, Opera */
+//@-webkit-keyframes fadeOut {
+//  0%   {opacity:0;}
+//  //1%   {opacity:1;}
+//  85%  {opacity:1;}
+//  100% {opacity:0;max-height:0;z-index:0;bottom:120%!important;}
+//}
+//
+///* Standard syntax */
+//@keyframes fadeOut {
+//  0%   {opacity:0;}
+//  //1%   {opacity:1;}
+//  85%  {opacity:1;}
+//  100% {opacity:0;max-height:0;z-index:0;bottom:120%!important;}
+//}
 
 
 /*======================================================  WITHIN RISK ASSESSMENT SECTION */
@@ -259,7 +288,7 @@ nav {
 #Assessment-Intro{
 	background-color:$light-grey;
 	color:$grey;
-	padding:1em 2em;
+	padding:1em 4em;
 	position:absolute;
 	z-index:16;
 	top:0;
@@ -273,6 +302,9 @@ nav {
 	&.done{
 		left:120%;
 		right:-180%;
+	}
+	.action{
+		//background-color:$grey!important;
 	}
 }
 #Assessment-Nav{
@@ -465,11 +497,11 @@ nav {
 	bottom:0;
 	margin:0 0 0 -.4em;
 	z-index:1;
-	background-color:$pink;
+	background-color:$black;
 	padding:0 0 0 .4em;
 	opacity:1;
 	max-height:100%;
-	border:.75em solid $pink;	
+	border:.5em solid $black;	
    box-sizing:border-box;
    -moz-box-sizing:border-box;
    -webkit-box-sizing:border-box;
@@ -502,9 +534,11 @@ nav {
 		line-height:1.25em;
 		float:left;
 		width:5em;
+		height:5em;
+		margin-left:.5em;
 		text-align:center;
-		background-color:$black;
-		color:$pink;
+		background-color:$pink;
+		color:$black;
 		position:relative;
 		border-radius:50%;
 		.flex-container{
@@ -517,11 +551,11 @@ nav {
 	}
 	#fact-info{
 		float:left;
-		//border-left:1px solid $white;
 		padding:.5em 1em;	
 		.data-number{
 			font-family: 'itc_avant_garde_pro_mdbold', helvetica-neue, helvetica, sans-serif;
-			color:$black;
+			-webkit-font-smoothing:antialiased;
+			color:$pink;
 			font-weight:bold;
 			vertical-align:middle;
 			font-style:normal;
@@ -533,9 +567,10 @@ nav {
 		}
 		p{
 			font-family:'itc_avant_garde_gothic_proMd', helvetica-neue, helvetica, sans-serif;
+			-webkit-font-smoothing:antialiased;
 			text-align:center;
 			margin:.25em 0;
-			color:$white;
+			color:$light-grey;
 			font-size:.9em;
 			@media screen and (min-width:(em(800))){
 				font-size:1em;
@@ -549,15 +584,15 @@ nav {
 			position:absolute;
 			content:' ';
 			top:.5em;
-			left:1.5em;
+			left:1.25em;
 			//height:4em;
 			//width:4em;
 			//background-color:$blue;
 			//box-sizing:border-box;
-			border-left:2em solid $white;
-			border-bottom:2em solid transparent;
-			border-top:2em solid transparent;
-			z-index:499;
+			//border-left:2em solid $pink;
+			//border-bottom:2em solid transparent;
+			//border-top:2em solid transparent;
+			//z-index:499;
 		}
 		
 		#open-education{
@@ -578,8 +613,8 @@ nav {
 			@include quarter-second-transition;
 			&:hover{
 				//background-color:$white;	
-				color:$pink!important;
-				left:.5em;
+				color:$white!important;
+				//left:.5em;
 			}
 			span{
 				display:block;
@@ -593,11 +628,9 @@ nav {
 /*======================================================  WITHIN EDUCATION MODULES SECTION */
 
 #Education-Intro{
-	//background-color:$white;
-	//color:$pink;
-	background-color:$black;
+	background-color:$light-grey;
 	color:$grey;
-	padding:1em 2em;
+	padding:1em 4em;
 	position:absolute;
 	z-index:16;
 	top:0;
@@ -606,8 +639,7 @@ nav {
 	right:0;
 	@include half-second-transition;
 	a{
-		//color:$pink;
-		color:$medium-grey;
+		color:$grey;
 	}
 	&.done{
 		right:120%;
@@ -634,9 +666,9 @@ nav {
 .photo-bg{
 	@include quarter-second-transition;
 	padding: 0;	
-	@include inner-shadow;
+	//@include inner-shadow;
 	h1{
-		//color:$white;
+		font-weight:900;
 		padding:0 .15em;
 		margin:0;
 	}
@@ -646,22 +678,24 @@ nav {
 	&:hover{
 	}
 }
-
 .education-header-link{
 	display:flex;
 	color:$black;
 	padding: 0 4em;
-	background-color:rgba(255,255,255,0.25);
+	background-color:rgba(255,255,255,0.15);
 	@include quarter-second-transition;
 	
 	&:hover{
 		color:$white!important;
-		background-color:rgba(0,0,0,.25);
+		background-color:rgba(0,0,0,.75);
+	}
+	.box{
+		padding:.5em 1.5em;
+		//border:.25em solid $black;
+		//background-color:$white;
 	}
 	h1{
-		//@include text-shadow;
-		//color:$black;
-		//@include one-em-border-radius;
+		
 	}
 }
 #l-color{ 
@@ -716,6 +750,20 @@ nav {
 }
 .overflow-hidden{
 	overflow:hidden;
+}
+
+
+
+.education-frame{
+	border-bottom:1px solid $medium-grey;
+	padding:0 5em;
+	p{
+		font-size:1.25em;
+		line-height:175%;
+	}
+	a{
+		color:$white;
+	}
 }
 
 

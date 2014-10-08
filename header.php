@@ -20,7 +20,7 @@
 
         
 		<header id="site-header" class="flex-container">
-				<a id="logo" class="flex-none circle" href="index">
+				<a id="logo" class="flex-none circle" href="index.php">
 					<img src="img/brightpink_logo.png" alt="Brightpink Logo">
 				</a>			
 		</header>
