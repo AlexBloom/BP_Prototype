@@ -1,4 +1,8 @@
 
+$('#Facts-Container, #Risk-Meter, .bar-title').addClass('closed');
+$('.content-wrapper').addClass('collapsed');
+$('.education-prompt').addClass('hidden');
+
 $(document).ready(function () {
 		// Fire LocalScroll
 		//$('.scrollpane').localScroll({offset:0});
@@ -8,82 +12,138 @@ $(document).ready(function () {
 		});
 	
 		// Size Full-Screen Videos, Images, & Slideshows to window height.
-		$('.full-screen-container').css('min-height',$(window).height());
-		$('.risk section').css('min-height',$(window).height()-150);
-		$('#family-history-home .vertical-container').css('min-height',$(window).height());
 		
-
+		$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
+		$('.education-header-link').css('min-height',$(window).height()/3);
+		$('#Intro').css('min-height',$(window).height());
+		
 		$(window).resize(function() {
-			$('.full-screen-container').css('min-height',$(window).height());
-			$('.risk section').css('min-height',$(window).height()-150);
-			$('#family-history-home .vertical-container').css('min-height',$(window).height());
+			$('.full-screen-container, .assessment-wrap, .scrollpane, #Assessment-Intro, .education-frame').css('min-height',$(window).height());
+			$('.education-header-link').css('min-height',$(window).height()/3);
+			$('#Intro').css('min-height',$(window).height());
 		});
 
 
-		//Sides Toggle
-		
-		$('.risk').click(function(){
-			$(this).addClass('open');
-			$(this).removeClass('closed');
-			$('.scrollnav').addClass('right');
-			$('.scrollnav').removeClass('left');
-			$('.education').addClass('closed');
-			$('#fixed-messages').addClass('open');
-			$('#fixed-messages').removeClass('closed');
-		});
-		
-		$('.education').click(function(){
-			$(this).addClass('open');
-			$(this).removeClass('closed');
-			$('.scrollnav').addClass('left');
-			$('.scrollnav').removeClass('right');
-			$('.risk').addClass('closed');
-			$('#fixed-messages').addClass('closed');
-			$('#fixed-messages').removeClass('open');
-			
-			//$('#assess-return').addClass('overlay');
-			
-		});
-		
-		$('#open-education').click(function(){
-			$('.education').addClass('open');
-			$('.education').removeClass('closed');
-			$('.scrollnav').addClass('left');
-			$('.scrollnav').removeClass('right');
-			$('.risk').addClass('closed');
-			$('#fixed-messages').addClass('closed');
-			$('#fixed-messages').removeClass('open');
-		});
-		
-		$('#launch-assess').click(function(){
-			$('#fixed-messages').addClass('visible');
-		});
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Close Intro 
+	 *
+	*/
 
+	$('#Begin').click(function(){
+		$('#Intro').addClass('done');
+	});
 
-	//Menu Toggle
-	$('#site-header').addClass('closed');
-	$('#main').addClass('open');
-
-   
-	$('#nav-toggle').click(function(){
-		//$(this).toggleClass('close');
-	$('#site-header').toggleClass('closed');
-	$('#site-header').toggleClass('open');
-	$('#main').toggleClass('open');
-	$('#main').toggleClass('closed');
-	$('body').toggleClass('overflow-hidden');
-	  });
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Risk Toggle 
+	 *
+	*/	
 	
-	  
-  	$('.main').click(function(){
-  		$('#site-header').addClass('closed');
-  		$('#site-header').removeClass('open');
-		$('.main').removeClass('menu-open');
-		$('.main').addClass('menu-closed');
-		$('#toggle').removeClass('close');
-		$('body').removeClass('overflow-hidden')
-  	 });
-	 
+  
+  $("#Risk-Toggle, #Launch-Assessment").click(function(){
+  
+
+	$(this).addClass('active');
+	$('Education-Toggle').removeClass('active');
+	//Expand Assessment
+	$('#Risk-Assessment').addClass('open');
+	$('#Risk-Assessment').removeClass('closed');
+	$('#Assessment-Intro').addClass('done');
+	$('.bar-title').removeClass('closed');
+	
+	//Hide Education
+	$('#Education-Intro').removeClass('done');
+	$('#Education-Modules').addClass('closed');
+	$('#Education-Modules').removeClass('open');
+	//Show Facts & Risk Meter
+	$('#Facts-Container, #Risk-Meter').addClass('open');
+	$('#Facts-Container, #Risk-Meter').removeClass('closed');
+  
+  });
+	
+		
+		
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Education Toggle 
+	 *
+	*/
+	
+	$('#Education-Toggle, #Launch-Education').click(function(){
+
+		//Toggle Style
+		$(this).addClass('active');
+		$('Risk-Toggle').removeClass('active');
+		
+		$('#Assessment-Intro').removeClass('done');
+		$('#Education-Intro').addClass('done');
+		$('.bar-title').removeClass('closed');
+		
+		//Hide Assessment
+		$('#Risk-Assessment').addClass('closed');
+		$('#Risk-Assessment').removeClass('open');
+		
+		//Expand Education
+		$('#Education-Modules').addClass('open');
+		$('#Education-Modules').removeClass('closed');
+		
+		//Hide Facts & Risk Meter, Show Education Meter
+		$('#Facts-Container, #Risk-Meter').addClass('closed');
+		$('#Facts-Container, #Risk-Meter').removeClass('open');
+   
+	});
+	
+		
+			
+		
+		
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Progress Through Assessment
+	 *
+	*/				
+   
+		$('.assess a').click(function(){
+			$(this).parent().parent().addClass('done');
+		});
+		
+		
+	// Swap Numbers into Progress Counter
+		$('.assess').click(function (){
+			$('#Assess-Count').toggleClass('flip');
+            $('#Assess-Count').html($(this).next().find('.number-icon').html()); //or any other way you want to get the desc
+            return; //break the loop
+		});
+		
+
+
+
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Opening & Navigation Education Sub-Sections
+	 *
+	*/	
+
+	
+	
+	$('.education-header-link').click(function(){
+		$('.education-header-link').css('min-height',$(window).height()/3);
+		$('.content-wrapper').addClass('collapsed');
+		$('.education-prompt').addClass('hidden');
+		$(this).css('min-height',$(window).height());
+		$(this).parent().next().removeClass('collapsed');
+		$(this).find('.education-prompt').removeClass('hidden');
+	});
+
+
+
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Video Stuff
+	 *
+	*/	
+
 	 // Show & Hide Video Overlay Scrolls
 	 
      //$("#video-overlay-1").addClass('closed');
@@ -116,11 +176,21 @@ $(document).ready(function () {
 		}
 		
      });
-	 
 
-	 
-	 
-	 
+
+
+
+
+
+
+	
+	/*
+	 *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Not Currently In Use
+	 *
+	*/
+	
+	
 	 // Active Link Highlighting
 
 	  // Add Current Class to ScrollNav of Currently Depressed Item
@@ -143,14 +213,5 @@ $(document).ready(function () {
 
 	     });
 	 });
-	 
-
-
-
-	 
-
-
-
-
 
  });
